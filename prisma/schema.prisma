@@ -7,13 +7,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "DATABASE_URL"
+  url      = env("DATABASE_URL")
 }
 
 model BookStore {
   id        Int      @id @default(autoincrement())
   name      String
-   ownerId  Int
+  ownerId  Int
   location  String
   created   DateTime @default(now())
   updated   DateTime @default(now())

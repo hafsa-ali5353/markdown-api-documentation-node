@@ -12,7 +12,7 @@ router.post('/signup', async (req, res) => {
 
     try {
 
-        const existingOwner = await prisma.owner.findUnique({
+        const existingOwner = await prisma.Owner.findUnique({
             where: {
                 email: email,
             }
